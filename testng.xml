@@ -3,7 +3,6 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/suhasm/Desktop/core/new/MainAssignment">
         <classes>
-            <class name="AddTask"></class>
             <class name="Negative"></class>
         </classes>
     </test>
