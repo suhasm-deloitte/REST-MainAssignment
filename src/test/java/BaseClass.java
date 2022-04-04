@@ -14,7 +14,7 @@ public class BaseClass {
 
     ArrayList<JSONObject> jsonarray = new ArrayList<>();
 
-    public Iterator<Row> rowIterator(String path) throws IOException {
+    public static Iterator<Row> rowIterator(String path) throws IOException {
 
         File myFile = new File(path);
         FileInputStream fis = new FileInputStream(myFile);
@@ -63,7 +63,7 @@ public class BaseClass {
     }
 
 
-    public String[] login_details(String path) throws IOException {
+    public static String[] login_details(String path) throws IOException {
 
         Iterator<Row> rowIterator = rowIterator(path);
         String[] arr = new String[2];

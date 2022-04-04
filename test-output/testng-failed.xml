@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="C:/Users/suhasm/Desktop/core/new/MainAssignment(failed)">
+    <classes>
+      <class name="AddTask">
+        <methods>
+          <include name="testPost"/>
+          <include name="post_data"/>
+        </methods>
+      </class> <!-- AddTask -->
+      <class name="Negative">
+        <methods>
+          <include name="testPost"/>
+          <include name="post_data"/>
+        </methods>
+      </class> <!-- Negative -->
+    </classes>
+  </test> <!-- C:/Users/suhasm/Desktop/core/new/MainAssignment(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
