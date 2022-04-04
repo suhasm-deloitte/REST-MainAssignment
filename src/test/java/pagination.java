@@ -1,32 +1,35 @@
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
-import org.testng.annotations.Test;
 
-import java.io.IOException;
+import java.util.ArrayList;
 
-import static io.restassured.RestAssured.given;
+public class pagination {
 
-@Test(priority = 4)
-public class pagination extends AddTask {
-    public void page() throws IOException {
-
-        RestAssured.baseURI = "https://api-nodejs-todolist.herokuapp.com";
+    public boolean pagination(String tokenG,int limit){
 
         RequestSpecification request = RestAssured.given();
-        request.header("Authorization","Bearer"+tokenG)
-                .header("Content-Type","application/json");
 
+        request.header("Authorization", "Bearer " + tokenG)
+                .header("Content-Type", "application/json");
 
-        RequestSpecification httpRequest = RestAssured.given();
-        Response response = httpRequest.get("/task?limit=2");
-        ResponseBody body = response.getBody();
-        System.out.println("Response Body is: " + body.asString());
+        Response ResponsegetTask = null;
 
-        /*Response ResTask = request.post();
-        ResTask.prettyPrint()*/;
+        ResponsegetTask = request.get("/task?limit="+limit);
+        ResponsegetTask.prettyPrint();
+
+        String jsonString=ResponsegetTask.getBody().asPrettyString();
+
+        int count = JsonPath.from(jsonString).get("count");
+        ArrayList<String> data = JsonPath.from(jsonString).get("data");
+
+        if(limit == data.size()){
+            return true;
+        }
+
+        else {
+            return false;
+        }
     }
 }
