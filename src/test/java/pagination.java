@@ -20,7 +20,6 @@ public class pagination extends AddTask {
         request.header("Authorization","Bearer"+tokenG)
                 .header("Content-Type","application/json");
 
-        //
 
         RequestSpecification httpRequest = RestAssured.given();
         Response response = httpRequest.get("/task?limit=2");

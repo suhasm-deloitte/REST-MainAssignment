@@ -19,7 +19,6 @@ public class RegisterPost {
     @BeforeClass
     public void post_data()
     {
-
         jsonData = new File("C:\\Users\\suhasm\\Desktop\\core\\postman\\MainAssignment\\src\\test\\resources\\postData.json");
         RestAssured.baseURI="https://api-nodejs-todolist.herokuapp.com/user";
 
